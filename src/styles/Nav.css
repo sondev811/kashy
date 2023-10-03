@@ -1,0 +1,74 @@
+.navbar-group-item {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.nav-close-icon {
+  display: none;
+}
+
+.nav-mobile-icon {
+  /* Dont use this, it takes a space in the header */
+  /* visibility: hidden;
+    opacity: 1; */
+  display: none;
+  outline: none;
+  * {
+    pointer-events: none;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media screen and (max-width: 991.98px) {
+  .navbar-group-item {
+    gap: 80px;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media screen and (max-width: 767.98px) {
+  .navbar-group-item {
+    gap: 60px;
+  }
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media screen and (max-width: 575.98px) {
+  .navbar__list {
+    --top: 0;
+    transition: 0.3s ease transform;
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: var(--top);
+    background: #fff;
+    padding: 50px;
+  }
+
+  .navbar-group-item {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .hide-item {
+    transform: translateY(-100%);
+  }
+
+  .nav-mobile-icon {
+    display: block;
+  }
+
+  .nav-close-icon {
+    position: absolute;
+    right: -5px;
+    top: 30px;
+    display: block;
+    width: 3rem;
+    margin: 0 0 0 auto;
+    * {
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.form {
+  width: 400px;
+  margin: 32px auto 0;
+  /* outline for the form */
+  outline: 3px solid #000;
+  border-radius: 8px 8px 0 0;
+  padding: 8px;
+}
+
+.form-group__label,
+.form-group__input {
+  display: block;
+}
+
+.form-group__label {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+.form-group__serivces,
+.form-group__input,
+.form-group__textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #e3e3e9;
+  background: var(--body-bg-color);
+  padding: 8px 0 14px 0;
+  color: var(--text-color);
+}
+
+.form-group__textarea {
+  resize: none;
+  max-height: 200;
+}
+
+.form-group:first-child {
+  margin-top: 16px;
+}
+
+.form-group:focus-within .form-group__label:not(.large) {
+  color: var(--primary-color);
+}
+
+.form-group:focus-within .form-group__input {
+  border-color: var(--primary-color);
+}
+
+.form-group__input::placeholder,
+.form-group__textarea::placeholder {
+  color: var(--form-placeholder-color);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  font-size: 1.2rem;
+}
+
+.checkbox__desc,
+.checkbox__files {
+  color: var(--form-checkbox-color);
+}
+
+.checkbox__files {
+  text-decoration: underline;
+}
+
+.submit-box {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.submit-box__btn {
+  color: var(--text-color);
+  background: var(--secondary-color);
+  box-shadow: 0px 13px 26px -8px var(--btn-shadow-color);
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* For tablet or less than */
+@media screen and (max-width: 991.98px) {
+  .form {
+    display: block;
+  }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+  .form {
+    /* display: none; */
+    margin: 0;
+    width: 100%;
+  }
+  /* 
+  .form-group:first-child {
+    margin-top: 0;
+  } */
+
+  .form-group__serivces,
+  .form-group__input,
+  .form-group__textarea,
+  .form-group__label {
+    font-size: 1.2rem;
+  }
+
+  .form-group__input::placeholder,
+  .form-group__textarea::placeholder {
+    font-size: 1.1rem;
+  }
+
+  .submit-box {
+    margin-top: 8px;
+  }
+
+  .submit-box__btn {
+    --height: 40px;
+    height: var(--height);
+    line-height: var(--height);
+  }
+}

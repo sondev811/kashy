@@ -1,0 +1,67 @@
+/* This file contains the styling for the Header and the Nav Bar of the application */
+
+.header {
+  padding: 16px 0;
+  background: var(--header-bg-color);
+}
+
+.header.header--fixed {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  /* background: rgba(255, 255, 255, 255); */
+}
+
+.header___inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+}
+
+/* For tablet or less than */
+@media screen and (max-width: 991.98px) {
+  .kashy-partner__img {
+    display: none;
+  }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+  .logo {
+    margin-right: auto;
+  }
+
+  .nav-mobile-btn {
+    display: block;
+  }
+}
+
+/* .navbar__list {
+    display: flex;
+    list-style-type: none;
+}
+  
+.header-action__link,
+.navbar__link {
+    margin: 0 auto;
+    padding: 8px 16px;
+    font-weight: 300;
+    font-size: 2rem;
+}
+  
+.navbar__link:hover {
+    color: #e89c89;
+} */
+
+/* .header-action__btn {
+    --height: 50px;
+  
+    min-width: 120px;
+} */

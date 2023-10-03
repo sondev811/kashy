@@ -1,0 +1,158 @@
+/* This file contains the styling for the Hero section of the home page */
+
+/* 40px gap btw 2 blocks: hero__inner and header 
+ 
+so header bottom takes 16px + 24 for hero__inner
+*/
+.hero {
+  background: var(--hero-bg-color);
+  /* margin-top: 67px; */
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0;
+  height: 100vh;
+}
+
+/* Left Side: Hero Article / About Kashy */
+.hero-introduction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-introduction__heading {
+  margin-top: 24px;
+  font-size: 2.3rem;
+  width: 356px;
+  max-width: 100%;
+}
+
+.hero-introduction__des {
+  font-size: 2rem;
+  width: 500px;
+  max-width: 100%;
+}
+
+.hero-benefits {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+}
+
+.hero-item__title {
+  position: relative;
+}
+
+.hero-item__title::after {
+  position: absolute;
+  content: "";
+  width: 44px;
+  height: 3px;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-color);
+}
+
+.hero-item__desc {
+  font-weight: 200;
+  line-height: 160%;
+}
+
+.hero-action {
+  margin-top: 24px;
+}
+
+.hero-action__btn {
+  font-size: 1.4rem;
+  background: var(--secondary-color);
+  box-shadow: 0px 13px 26px -8px var(--btn-shadow-color);
+  color: var(--text-color);
+}
+
+.hero__socials {
+  display: flex;
+  column-gap: 32px;
+  margin-top: 24px;
+}
+
+.hero__socials-btn:last-child {
+  margin-right: 0;
+}
+
+.hero-socials {
+  display: flex;
+  column-gap: 32px;
+  margin-top: 24px;
+}
+
+.hero-socials__link:last-child {
+  margin-right: 0;
+}
+
+.hero-socials__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--text-color);
+}
+
+/* For tablet or less than */
+@media screen and (max-width: 991.98px) {
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: calc(100% - 24px);
+  }
+
+  .hero-introduction__heading {
+    margin-top: 0;
+  }
+
+  .hero-introduction__desc {
+    display: none;
+  }
+
+  .hero-item__title {
+    display: none;
+  }
+
+  .hero-item__desc {
+    display: none;
+  }
+
+  .hero-action {
+    display: none;
+  }
+
+  .hero-socials {
+    display: none;
+  }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+  .logo-large {
+    display: none;
+  }
+  .hero-introduction__heading {
+    margin-top: 70px;
+    font-size: 1.6rem;
+    width: 300px;
+    max-width: 100%;
+    /* display: none; */
+  }
+
+  .hero__inner {
+    max-width: 100%;
+  }
+}
