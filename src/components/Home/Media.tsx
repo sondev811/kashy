@@ -18,6 +18,7 @@ import thumb8 from "../../assets/gallery/thumb-8.jpeg";
  * @return HTML elements of the Media section
  */
 export default function Media() {
+  const images = [thumb1, thumb2, thumb3, thumb4, thumb5, thumb6, thumb7, thumb8];
   return (
     <section className="media">
       <div className="container">
@@ -55,45 +56,15 @@ export default function Media() {
             </div>
 
             <div className="media-photo__list">
-              {/* <!-- Item 1 --> */}
-              <div className="media-photo-item">
-                <img src={thumb1} alt="" className="media-photo-item__thumb" />
-              </div>
-
-              {/* <!-- Item 2 --> */}
-              <div className="media-photo-item">
-                <img src={thumb2} alt="" className="media-photo-item__thumb" />
-              </div>
-
-              {/* <!-- Item 3 --> */}
-              <div className="media-photo-item">
-                <img src={thumb3} alt="" className="media-photo-item__thumb" />
-              </div>
-
-              {/* <!-- Item 4 --> */}
-              <div className="media-photo-item">
-                <img src={thumb4} alt="" className="media-photo-item__thumb" />
-              </div>
-
-              {/* <!-- Item 5 --> */}
-              <div className="media-photo-item">
-                <img src={thumb5} alt="" className="media-photo-item__thumb" />
-              </div>
-
-              {/* <!-- Item 6 --> */}
-              <div className="media-photo-item">
-                <img src={thumb6} alt="" className="media-photo-item__thumb" />
-              </div>
-
-              {/* <!-- Item 7 --> */}
-              <div className="media-photo-item">
-                <img src={thumb7} alt="" className="media-photo-item__thumb" />
-              </div>
-
-              {/* <!-- Item 8 --> */}
-              <div className="media-photo-item">
-                <img src={thumb8} alt="" className="media-photo-item__thumb" />
-              </div>
+             {
+               images.length ? images.map((image, index) => {
+                 return (
+                   <div key={index} className="media-photo-item">
+                     <img src={image} alt="" className="media-photo-item__thumb" />
+                   </div>
+                 )
+               }) : null
+             }
             </div>
           </div>
         </div>

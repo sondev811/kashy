@@ -1,17 +1,32 @@
 /* This file contains the code for the Quoting Form section of the Home page */
 
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/Home/QuotingForm.css";
-
 /**
  * @name QuotingForm
  * @summary Renders the Quoting Form section of the Home page when it is called
  * @returns HTML elements of the Quoting Form section
  */
 
-export default function QuotingForm() {
+interface IProps {
+  isActiveForm: boolean,
+  closeForm: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function QuotingForm(props: IProps) {
+  const { isActiveForm, closeForm } = props;
+
+  const onCloseForm = () => {
+    closeForm(false);
+  }
+  
   return (
-    <div className="form">
-      <form action="#" id="form" autoComplete="off">
+    <div className={`form ${isActiveForm ? 'activeForm' : ''}`}>
+      <span className="close-form--mobile" onClick={() => onCloseForm()}>
+        <FontAwesomeIcon icon={faXmark} />
+      </span>
+      <form id="form" autoComplete="off">
         {/* Form Group 1: Full Name */}
         <div className="form-group">
           <label htmlFor="full-name" className="form-group__label">
@@ -136,7 +151,7 @@ export default function QuotingForm() {
 
         {/* Submit btn */}
         <div className="form-group submit-box">
-          <button className="btn submit-box__btn" type="submit">
+          <button className="btn submit-box__btn" type="button">
             Request A Quote
           </button>
         </div>

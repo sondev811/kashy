@@ -52,10 +52,11 @@
 .media-photo-item__thumb {
   display: block;
   max-width: 100%;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 250px;
   object-fit: cover;
   border-radius: 5%;
+  object-fit: cover;
 }
 
 /* For tablet or less than */
@@ -63,6 +64,10 @@
   .media-inner {
     grid-template-columns: 1fr;
     row-gap: 32px;
+  }
+
+  .media-photo__list {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .media-inner__video iframe {
@@ -76,8 +81,12 @@
     height: 300px;
   }
 
-  .media-photo-item__thumb {
+  .media-photo__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* .media-photo-item__thumb {
     width: 150px;
     height: 150px;
-  }
+  } */
 }

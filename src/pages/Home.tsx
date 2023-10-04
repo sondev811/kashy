@@ -31,12 +31,12 @@ export default function Home({setActivePage}: {setActivePage: any}) {
     }, [setActivePage]);
 
     return (
-        <main>
-            <Head />
-            <Hero />
-            <Reviews />
-            <Media />
-            <CallToActions />
-        </main>
+      <main>
+        <Head />
+        <Hero />
+        <Reviews />
+        <Media />
+        <CallToActions />
+      </main>
     )
 }

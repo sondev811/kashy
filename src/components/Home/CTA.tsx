@@ -16,7 +16,7 @@ export default function CallToActions() {
   return (
     <section className="call-to-actions">
       <div className="subscribe-partner">
-        <div className="container">
+        <div className="container" style={{ overflow: 'hidden' }}>
           <div className="subscribe-partner__content">
             {/* <!-- Left side --> */}
             {/* <section className="subscribe">

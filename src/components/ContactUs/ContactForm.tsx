@@ -10,6 +10,8 @@ import { useState } from "react"; // For storing the inputed information
  */
 export default function ContactForm() {
 
+    // Nên sài formik thay vì viết từng state cho input, có 100 input => tạo 100 state?
+
     // Set the default first name
     const [userFirstName, setDefaultFirstName] = useState("");
     // Set the default last name
@@ -30,16 +32,18 @@ export default function ContactForm() {
 
     return (
         <section className="contact-us-form">
+          <h2>Contact Us</h2>
             <form id="contact-form" autoComplete="off">
+              <div>
                 {/* <!-- Form Group 1: Full Name --> */}
                 <div className="form-group">
                     <input
                         id="form__firstName"
                         type="text"
                         placeholder="First Name"
+                        className="clear-border-right"
                         value={userFirstName}
                         required
-                        style={{ height: "50px" }}
                         onChange={(event) => {
                             setDefaultFirstName(event.target.value);
                         }}
@@ -47,27 +51,28 @@ export default function ContactForm() {
                 </div>
                 {/* <!-- Form Group 2: Last Name --> */}
                 <div className="form-group">
-                    <input
-                        id="form__lastName"
-                        type="text"
-                        placeholder="Last Name"
-                        value={userLastName}
-                        required
-                        style={{ height: "50px" }}
-                        onChange={(event) => {
-                            setDefaultLastName(event.target.value);
-                        }}
-                    />
+                  <input
+                      id="form__lastName"
+                      type="text"
+                      placeholder="Last Name"
+                      value={userLastName}
+                      required
+                      onChange={(event) => {
+                          setDefaultLastName(event.target.value);
+                      }}
+                  />
                 </div>
+              </div>
+              <div>
                 {/* <!-- Form Group 3: Email --> */}
                 <div className="form-group">
                     <input
                         id="form__email"
                         type="email"
                         placeholder="Email"
+                        className="clear-border-right"
                         value={userEmail}
                         required
-                        style={{ height: "50px" }}
                         onChange={(event) => {
                             setDefaultEmail(event.target.value);
                         }}
@@ -81,31 +86,31 @@ export default function ContactForm() {
                         placeholder="Phone"
                         pattern="0[0-9]{3}[0-9]{3}[0-9]{3}"
                         value={userPhoneNo}
-                        style={{ height: "50px" }}
                         onChange={(event) => {
                             setDefaultPhoneNo(event.target.value);
                         }}
                     />
                 </div>
-                {/* <!-- Form Group 5: Comments --> */}
-                <div className="form-group">
-                    <input
-                        id="form__message"
-                        type="text"
-                        placeholder="Type your message here..."
-                        value={message}
-                        style={{ height: "80px" }}
-                        onChange={(event) => {
-                            setDefaultMessage(event.target.value);
-                        }}
-                    />
-                </div>
-                {/* <!-- Submit button --> */}
-                <div className="form-group submit-box">
-                  <button className="btn submit-box__btn" type="submit">
-                    Submit
-                  </button>
-                </div>
+              </div>
+              {/* <!-- Form Group 5: Comments --> */}
+              <div className="form-group">
+                  <input
+                      id="form__message"
+                      type="text"
+                      placeholder="Type your message here..."
+                      value={message}
+                      style={{ height: '126px' }}
+                      onChange={(event) => {
+                          setDefaultMessage(event.target.value);
+                      }}
+                  />
+              </div>
+              {/* <!-- Submit button --> */}
+              <div className="form-group submit-box">
+                <button className="btn submit-box__btn" type="submit">
+                  Submit
+                </button>
+              </div>
             </form>
         </section>
     )

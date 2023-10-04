@@ -1,28 +1,25 @@
 /* This file contains the styling for the Contact Us page of the application */
 
 .contact-us-container {
-    display: block;
-    width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 9rem;
 }
 
 #content-container {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .maps-and-info {
-    margin: auto;
-    padding-left: 3%;
+  flex: 1;
 }
 
 .google-maps {
-    height: 70%;
-    width: 100%;
 }
 
 .business-info {
-    height: 20%;
-    width: 50%;
-    padding-top: 2%;
+  width: 50%;
+  padding: 5rem 0;
 }
 
 /* Styles the elements inside the information grid */
@@ -31,13 +28,13 @@
 }
 
 .info-grid {
-    position: static;
-    display: grid;
-    height: auto;
-    width: 100%;
-    grid-template-rows: min-content 1fr;
-    grid-template-columns: auto auto;
-    text-align: center;
+  position: static;
+  display: grid;
+  height: auto;
+  width: 100%;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: auto auto;
+  text-align: center;
 }
 
 #kashy-email, #kashy-phone,
@@ -64,29 +61,67 @@
 
 /* Styles the elements inside the form and the form */
 .contact-us-form {
-    width: 100%;
-    background-color: rgba(221, 221, 221, 0.6);
-}
+  flex: 1;
+  padding: 0 5rem;
+} 
 
-#contact-form {
-    height: 78.3vh;
-    width: 85%;
+.contact-us-form h2 {
+  text-transform: uppercase;
+  font-size: 34px;
+  padding: 5rem 0;
 }
 
 #customers-form {
-    height: 48%;
-    width: 100%;
-    margin-top: 40px;
-    padding: 40px 50px;
-    background-color: white;
+  height: 48%;
+  width: 100%;
+  margin-top: 40px;
+  padding: 40px 50px;
+  background-color: white;
 }
 
 #customers-form h2 {
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    font-size: 30px;
-    font-family: 'Helvetica Neue', sans-serif, sans-serif;
-    font-weight: bold;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: 'Helvetica Neue', sans-serif, sans-serif;
+  font-weight: bold;
+}
+
+#contact-form input {
+  width: 100%;
+  padding: 3rem 1rem;
+  border: 1px solid;
+}
+
+#contact-form>div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+
+#contact-form>div>div {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+}
+
+#contact-form>div>div input {
+  border-bottom: none!important;
+  outline: none;
+}
+
+#contact-form input {
+  outline: none;
+}
+
+.clear-border-right {
+  border-right: none!important;
+}
+
+#contact-form  .submit-box {
+  justify-content: flex-end!important; 
+  margin-top: 3rem;
 }
 
 .form-control {
@@ -118,4 +153,31 @@
 #submitted-message {
     margin-left: 0%;
     margin-top: 2%;
+}
+
+@media screen and (max-width: 991.98px) {
+  .contact-us-container {
+    padding-top: 6rem;
+    display: block;
+  }
+  .contact-us-form {
+    padding: 0 3rem;
+    padding-bottom: 2rem;
+  }
+  #contact-form .submit-box {
+    justify-content: center!important; 
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .business-info {
+    width: 85%;
+    padding: 3rem 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .business-email, .more-info {
+    padding-right: 5px;
+  }
 }

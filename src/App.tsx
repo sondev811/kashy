@@ -8,6 +8,8 @@ import { useState } from "react"; // Import functions to control states
 // Import reset css
 import "./styles/Reset.css";
 import './styles/GlobalStyles.css'; // Import style sheet
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 // Import all pages
 import Home from './pages/Home';
