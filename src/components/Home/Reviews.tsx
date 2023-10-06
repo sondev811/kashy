@@ -1,11 +1,11 @@
 /* This file contains the code for the Reviews section of the Home page */
 
 import ReviewCard from "./ReviewCard";
-import Customer1 from "../../assets/img/customer-1.jpeg";
-import Customer2 from "../../assets/img/customer-2.jpeg";
-import Customer3 from "../../assets/img/customer-3.jpeg";
-import Customer4 from "../../assets/img/customer-4.jpg";
-import { useState } from "react";
+import Customer1 from "@assets/img/customer-1.jpeg";
+import Customer2 from "@assets/img/customer-2.jpeg";
+import Customer3 from "@assets/img/customer-3.jpeg";
+import Customer4 from "@assets/img/customer-4.jpg";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 /**
  * @name Reviews
@@ -54,11 +54,11 @@ const mockData: ICustomer[] = [
   }
 ]
 export default function Reviews() {
-  const [customers, setCustomers] = useState(mockData);
+  const [customers, setCustomers] = useState<ICustomer[]>(mockData);
   const settings = {
     dots: false,
     autoplay: true,
-    autoplaySpeed: 10000,
+    autoplaySpeed: 5000,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -93,6 +93,7 @@ export default function Reviews() {
       }
     ]
   };
+
   return (
     <section className="review">
       <div className="container">

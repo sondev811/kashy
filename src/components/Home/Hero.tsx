@@ -1,9 +1,8 @@
 /* This file contains the code for the Hero section of the Home page */
 
 import QuotingForm from "./QuotingForm";
-import React, { useState } from 'react';
-import FullSizeLogo from "../../assets/img/logo-icon-large.png";
-import Banner from "../../assets/img/hero.png";
+import React, { useEffect, useRef, useState } from 'react';
+import Banner from "@assets/img/hero.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -11,6 +10,7 @@ import {
   faLinkedin,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import Button from "@components/Button";
 
 /**
  * @name Hero
@@ -19,15 +19,17 @@ import {
  */
 export default function Hero() {
   const [isActiveForm, setIsActiveForm] = useState(false);
+  
   return (
     <section className="hero">
       <div className="container-fluid">
         <div className="hero__inner">
           <div>
             {/* <!-- Left Side: Hero Article / About Kashy --> */}
-            <section className="hero-introduction">
-              <img src={FullSizeLogo} alt="" className="logo-large" />
-              <h1 className="section-heading hero-introduction__heading">
+            <section className="hero-introduction" id="heroIntroduction">
+              <div style={{ height: '125px'}}>
+              </div>
+              <h1 className="section-heading hero-introduction__heading" id="heroHeading">
                 Mobile mechanics that save you time and money, honestly
               </h1>
               <p className="section-desc hero-introduction__desc--mobile">
@@ -80,9 +82,7 @@ export default function Hero() {
 
               {/* Hero CTA */}
               <div className="hero-action">
-                <button type="button" className="btn hero-action__btn">
-                  Find Out More
-                </button>
+                <Button type="button" buttonName="Find Out More" size="normal" rounded="half" />
               </div>
 
               {/* Hero Socials Contact */}
@@ -145,14 +145,20 @@ export default function Hero() {
                 </a>
               </div>
               <div className="hero_inner--mobile">
-                <button className="btn" onClick={() => setIsActiveForm(true)}>Request a quote</button>
+                <Button 
+                  type='button'
+                  buttonName='Request A Quote' 
+                  size='large'
+                  rounded='rounded' 
+                  onClick={() => setIsActiveForm(true)}
+                />
                 <div>
                   <img src={Banner} />
                 </div>
               </div>
             </section>
             {/* <!-- Right Side: Hero Quoting --> */}
-            <QuotingForm isActiveForm={isActiveForm} closeForm={setIsActiveForm}/>
+            <QuotingForm isActiveForm={isActiveForm} setIsActiveForm={setIsActiveForm}/>
           </div>
         </div>
       </div>

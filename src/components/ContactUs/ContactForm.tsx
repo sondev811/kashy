@@ -1,6 +1,7 @@
 /* This file contains the code for the contact form of the Contact Us page */
 
 // Required imports
+import Button from "@components/Button";
 import { useState } from "react"; // For storing the inputed information
 
 /**
@@ -107,9 +108,12 @@ export default function ContactForm() {
               </div>
               {/* <!-- Submit button --> */}
               <div className="form-group submit-box">
-                <button className="btn submit-box__btn" type="submit">
-                  Submit
-                </button>
+                <Button 
+                  type="button"
+                  buttonName="Submit" 
+                  size="small" 
+                  rounded="half" 
+                />
               </div>
             </form>
         </section>

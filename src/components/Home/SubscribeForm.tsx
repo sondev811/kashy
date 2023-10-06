@@ -1,3 +1,5 @@
+import Button from "@components/Button";
+
 export default function SubscribeForm() {
   return (
     <section className="subscribe">
@@ -14,9 +16,12 @@ export default function SubscribeForm() {
               placeholder="Email*"
             />
             <div className="subscribe-form__btn">
-              <button className="btn subscribe-form__btn-cta" type="submit">
-                Subscribe
-              </button>
+              <Button 
+                type="button"
+                buttonName="Subscribe" 
+                size="small" 
+                rounded="half" 
+              />
             </div>
           </div>
         </div>

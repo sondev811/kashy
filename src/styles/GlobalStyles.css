@@ -10,9 +10,8 @@ html {
 :root {
 
   --text-color: #000;
-  --primary-color: #d4452d;
-  --secondary-color: #ffbbaa;
-
+  --primary-color: rgb(212, 69, 45);
+  --secondary-color: rgb(255, 187, 170);
   /* Header */
   --header-bg-color: #fff;
 
@@ -32,7 +31,18 @@ html {
   --footer-bg-color: #a6a6a6;
   --footer-text-color: #fff;
 
-
+  /* Button */
+  --btn-bg-color: rgb(212, 69, 45);
+  --btn-text-light-color: #fff;
+  --btn-text-dark-color: #000;
+  --btn-shadow-color: rgba(204, 44, 11, 0.5);
+  --btn-hover-color: rgb(207, 56, 26);
+  --btn-large-size: 1.5rem 3rem;
+  --btn-large-font: 25px;
+  --btn-normal-font: 20px;
+  --btn-normal-size: 1rem 2rem;
+  --btn-small-font: 16px;
+  --btn-small-size: 1rem 2rem;
   
   --word-color: rgb(0, 0, 0);
   --hover-btn-color: #c5c6d0;

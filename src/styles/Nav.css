@@ -19,6 +19,11 @@
   }
 }
 
+.navbar__item a {
+  font-size: 21px;
+  text-transform: uppercase;
+}
+
 /* Medium devices (tablets, less than 992px) */
 @media screen and (max-width: 991.98px) {
   .navbar-group-item {

@@ -3,14 +3,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-import thumb1 from "../../assets/gallery/thumb-1.jpeg";
-import thumb2 from "../../assets/gallery/thumb-2.jpeg";
-import thumb3 from "../../assets/gallery/thumb-3.jpeg";
-import thumb4 from "../../assets/gallery/thumb-4.jpeg";
-import thumb5 from "../../assets/gallery/thumb-5.jpeg";
-import thumb6 from "../../assets/gallery/thumb-6.jpeg";
-import thumb7 from "../../assets/gallery/thumb-7.jpeg";
-import thumb8 from "../../assets/gallery/thumb-8.jpeg";
+import thumb1 from "@assets/gallery/thumb-1.jpeg";
+import thumb2 from "@assets/gallery/thumb-2.jpeg";
+import thumb3 from "@assets/gallery/thumb-3.jpeg";
+import thumb4 from "@assets/gallery/thumb-4.jpeg";
+import thumb5 from "@assets/gallery/thumb-5.jpeg";
+import thumb6 from "@assets/gallery/thumb-6.jpeg";
+import thumb7 from "@assets/gallery/thumb-7.jpeg";
+import thumb8 from "@assets/gallery/thumb-8.jpeg";
+import Button from "@components/Button";
 
 /**
  * @name Media
@@ -40,19 +41,17 @@ export default function Media() {
             <p className="section-heading media-photo__heading">
               kashyaustralia
             </p>
-            <div className="btn media-photo__btn">
-              <a
+            <div className="media-photo__btn">
+              <Button 
+                type="link" 
+                buttonName="Follow" 
                 href="https://www.instagram.com/kashyaustralia/"
-                className="media-photo__link"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <FontAwesomeIcon
+                icon={<FontAwesomeIcon
                   icon={faInstagram}
                   className="media-photo__icon"
-                />
-                <span className="media-photo__text-btn">Follow</span>
-              </a>
+                />}
+              />
+                
             </div>
 
             <div className="media-photo__list">

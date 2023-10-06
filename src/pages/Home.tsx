@@ -4,17 +4,17 @@
 import React, { useEffect } from "react"; // Import React namespace and useEffect function to change the page's title
 
 // Import style sheets
-import "../styles/Home/Hero.css"; // Style sheet for the Hero section
-import "../styles/Home/Reviews.css"; // Style sheet for the Reviews section
-import "../styles/Home/Media.css"; // Style sheet for the Media section
-import "../styles/Home/CTA.css"; // Style sheet for the CTA section / Partner and Subscribe section
+import "@styles/Home/Hero.css"; // Style sheet for the Hero section
+import "@styles/Home/Reviews.css"; // Style sheet for the Reviews section
+import "@styles/Home/Media.css"; // Style sheet for the Media section
+import "@styles/Home/CTA.css"; // Style sheet for the CTA section / Partner and Subscribe section
 
 // Import components
-import Head from "../components/Head";
-import Hero from "../components/Home/Hero";
-import Reviews from "../components/Home/Reviews";
-import Media from "../components/Home/Media";
-import CallToActions from "../components/Home/CTA";
+import Head from "@components/Head";
+import Hero from "@components/Home/Hero";
+import Reviews from "@components/Home/Reviews";
+import Media from "@components/Home/Media";
+import CallToActions from "@components/Home/CTA";
 
 /**
  * @name Home

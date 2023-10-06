@@ -7,15 +7,6 @@
   padding: 8px;
 }
 
-.activeForm {
-  visibility: visible!important;
-  transform: translateX(0%)!important;
-  -webkit-transform: translateX(0%)!important;
-  -moz-transform: translateX(0%)!important;
-  -ms-transform: translateX(0%)!important;
-  -o-transform: translateX(0%)!important;
-}
-
 .close-form--mobile {
   display: none!important;
   font-size: 21px;
@@ -94,6 +85,11 @@
   display: flex;
   justify-content: center;
   margin: 16px 0;
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  -ms-transition: .3s all;
+  -o-transition: .3s all;
 }
 
 .submit-box__btn {
@@ -104,6 +100,69 @@
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
+}
+
+.scroll-button {
+  position: fixed;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100px);
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  -ms-transition: .3s all;
+  -o-transition: .3s all;
+}
+
+.showBtn {
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+
+.formScroll {
+  position: fixed;
+  height: auto;
+  background: #fff;
+  z-index: 10000;
+  border: none;
+  padding: 5rem 4rem;
+  top: -100%;
+  left: -100%;
+  transition: .5s all;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  -ms-transition: .5s all;
+  -o-transition: .5s all;
+}
+
+.activeFormScroll {
+  width: 50%;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  visibility: visible;
+  opacity: 1;
+}
+
+.closeFormScroll {
+  cursor: pointer;
+  display: flex!important;
 }
 
 /* For tablet or less than */
@@ -133,6 +192,14 @@
   }
   .close-form--mobile {
     display: flex!important;
+  }
+  .activeForm {
+    visibility: visible!important;
+    transform: translateX(0%)!important;
+    -webkit-transform: translateX(0%)!important;
+    -moz-transform: translateX(0%)!important;
+    -ms-transform: translateX(0%)!important;
+    -o-transform: translateX(0%)!important;
   }
 }
 

@@ -10,7 +10,7 @@ so header bottom takes 16px + 24 for hero__inner
 }
 
 .hero__inner {
-  padding: 7.5rem 2rem;
+  padding: 12.5rem 2rem;
   background: rgb(235, 235, 235);
   padding-bottom: 3rem;
   /* height: 100vh; */
@@ -25,6 +25,7 @@ so header bottom takes 16px + 24 for hero__inner
   border: 15px #E5E5E5 solid;
   background: #fff;
   padding: 2rem;
+  
 }
 
 /* Left Side: Hero Article / About Kashy */
@@ -40,17 +41,6 @@ so header bottom takes 16px + 24 for hero__inner
   display: none;
 }
 
-.hero_inner--mobile button {
-  color: #fff;
-  /* background-color: var(--primary-color); */
-  /* box-shadow: 0px 10px 14px -8px rgba(212, 69, 45, 0.8); */
-  padding: 0 5rem;
-  text-transform: uppercase;
-  background-color: var(--secondary-color);
-  border: none;
-  box-shadow: 0px 10px 14px -8px var(--btn-shadow-color);
-}
-
 .hero_inner--mobile div {
   margin-top: 30px;
 }
@@ -62,7 +52,7 @@ so header bottom takes 16px + 24 for hero__inner
 .hero-introduction__heading {
   margin-top: 24px;
   font-size: 2.3rem;
-  width: 356px;
+  width: 345px;
   max-width: 100%;
 }
 
@@ -189,7 +179,6 @@ so header bottom takes 16px + 24 for hero__inner
 
   .hero-introduction__heading {
     padding: 1rem;
-    width: 500px;
   }
 
   .hero_inner--mobile button {
