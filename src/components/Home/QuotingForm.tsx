@@ -204,7 +204,7 @@ export default function QuotingForm(props: IProps) {
           <div className='form-group submit-box' ref={formRef}>
             <Button 
               type='button'
-              buttonName='Request A Quote' 
+              buttonName={isActiveForm ? 'Submit' : 'Request A Quote' }
               size='small' 
               rounded='half' 
               onClick={submitForm}
@@ -212,11 +212,12 @@ export default function QuotingForm(props: IProps) {
           </div>
         </form>
       </div>
-      <div className={`scroll-button ${isShowBtn ? 'showBtn' : ''}`}>
+      <div className={`scroll-button-container ${isShowBtn ? 'showBtn' : ''}`} id='scrollBtn'>
         <Button 
           type='button'
-          buttonName='Request A Quote' 
-          size='large'
+          buttonName='Request A Quote'
+          size='small'
+          extendsClass='scroll-button-container--btn'
           rounded='half' 
           onClick={() => {
             setIsShowScrollForm(true); 

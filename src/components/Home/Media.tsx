@@ -12,6 +12,7 @@ import thumb6 from "@assets/gallery/thumb-6.jpeg";
 import thumb7 from "@assets/gallery/thumb-7.jpeg";
 import thumb8 from "@assets/gallery/thumb-8.jpeg";
 import Button from "@components/Button";
+import Slider from "react-slick";
 
 /**
  * @name Media
@@ -20,6 +21,41 @@ import Button from "@components/Button";
  */
 export default function Media() {
   const images = [thumb1, thumb2, thumb3, thumb4, thumb5, thumb6, thumb7, thumb8];
+  const settings = {
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    swipeToSlide: true,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
     <section className="media">
       <div className="container">
@@ -38,32 +74,50 @@ export default function Media() {
 
           {/* <!-- Right side --> */}
           <div className="media-photo">
-            <p className="section-heading media-photo__heading">
-              kashyaustralia
-            </p>
-            <div className="media-photo__btn">
-              <Button 
-                type="link" 
-                buttonName="Follow" 
-                href="https://www.instagram.com/kashyaustralia/"
-                icon={<FontAwesomeIcon
-                  icon={faInstagram}
-                  className="media-photo__icon"
-                />}
-              />
-                
+            <div className="media-photo__social">
+              <p className="section-heading media-photo__heading">
+                kashyaustralia
+              </p>
+              <div className="media-photo__btn">
+                <Button 
+                  type="link" 
+                  buttonName="Follow" 
+                  href="https://www.instagram.com/kashyaustralia/"
+                  icon={<FontAwesomeIcon
+                    icon={faInstagram}
+                    className="media-photo__icon"
+                  />}
+                />
+                  
+              </div>
             </div>
-
             <div className="media-photo__list">
-             {
-               images.length ? images.map((image, index) => {
-                 return (
-                   <div key={index} className="media-photo-item">
-                     <img src={image} alt="" className="media-photo-item__thumb" />
-                   </div>
-                 )
-               }) : null
-             }
+            {
+              images.length ? images.map((image, index) => {
+                return (
+                  <div key={index} className="media-photo-item">
+                    <img src={image} alt="" className="media-photo-item__thumb" />
+                  </div>
+                )
+              }) : null
+            }
+            </div>
+            <div className="media-photo__list--mobile">
+              {
+                <Slider {...settings}>
+                {
+                  images.length ? 
+                    images.map((image, index) => {
+                      return (
+                        <div key={index} className="media-photo-item">
+                          <img src={image} alt="" className="media-photo-item__thumb" />
+                        </div>
+                      )
+                    })
+                  : null
+                }
+                </Slider>
+              }
             </div>
           </div>
         </div>

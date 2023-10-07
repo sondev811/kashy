@@ -5,8 +5,9 @@ import { useEffect } from "react"; // Import React namespace and useEffect funct
 // Import style sheet
 
 // Import components
-import Head from "../components/Head";
-import AboutUsInfo from "../components/AboutUs/AboutUsInfo";
+import Head from "@components/Head";
+import AboutUsInfo from "@components/AboutUs/AboutUsInfo";
+import { navbarName } from "@constants/Constant";
 
 /**
  * @name AboutUs
@@ -19,7 +20,7 @@ export default function AboutUs({setActivePage}: {setActivePage: any}) {
     // Set the page's title and active page to Home
     useEffect(() => {
         document.title = "About Us | Kashy";
-        setActivePage("About Us");
+        setActivePage(navbarName.aboutUs);
     }, [setActivePage]);
 
     return (

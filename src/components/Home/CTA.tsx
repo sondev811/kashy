@@ -2,10 +2,10 @@
 
 import SubscribeForm from "./SubscribeForm";
 
-import Partner1 from "../../assets/img/advertisement-MTAQ.webp";
-import Partner2 from "../../assets/img/advertisement-heymel.webp";
-import Partner3 from "../../assets/img/advertisement-practal.webp";
-import Partner4 from "../../assets/img/advertisement-twice.webp";
+import Partner1 from "@assets/img/advertisement-MTAQ.webp";
+import Partner2 from "@assets/img/advertisement-heymel.webp";
+import Partner3 from "@assets/img/advertisement-practal.webp";
+import Partner4 from "@assets/img/advertisement-twice.webp";
 
 /**
  * @name CallToActions

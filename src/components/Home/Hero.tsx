@@ -27,7 +27,7 @@ export default function Hero() {
           <div>
             {/* <!-- Left Side: Hero Article / About Kashy --> */}
             <section className="hero-introduction" id="heroIntroduction">
-              <div style={{ height: '125px'}}>
+              <div className="hero-introduction__logo">
               </div>
               <h1 className="section-heading hero-introduction__heading" id="heroHeading">
                 Mobile mechanics that save you time and money, honestly

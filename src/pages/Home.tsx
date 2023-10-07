@@ -15,6 +15,7 @@ import Hero from "@components/Home/Hero";
 import Reviews from "@components/Home/Reviews";
 import Media from "@components/Home/Media";
 import CallToActions from "@components/Home/CTA";
+import { navbarName } from "@constants/Constant";
 
 /**
  * @name Home
@@ -27,7 +28,7 @@ export default function Home({setActivePage}: {setActivePage: any}) {
     // Set the page's title and active page to Home
     useEffect(() => {
         document.title = "Kashy Australia | Find an Honest Mechanic";
-        setActivePage("Home");
+        setActivePage(navbarName.home);
     }, [setActivePage]);
 
     return (

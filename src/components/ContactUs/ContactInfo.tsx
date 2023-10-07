@@ -5,18 +5,38 @@
  * @summary Renders the information grid on the left of the Contact Us page
  * @returns HTML elements of the information grid
  */
+import React, { useState } from "react";
+import GoogleMapReact, { ChangeEventValue, Coords } from 'google-map-react';
+import Location from "./Location";
+import { locationDefault, locations } from "@constants/Constant";
+import { ILocation } from "@interfaces/index";
+
 export default function ContactInfo() {
+  const [center, setCenter] = useState<Coords>(locationDefault.center);
+  const [zoom, setZoom] = useState<number>(locationDefault.zoom);
+
+  const handleMapChange = ({ center, zoom }: ChangeEventValue) => {
+    setCenter(center);
+    setZoom(zoom);
+  };
+
     return (
         <section className="maps-and-info">
             <div className="google-maps" style={{ width: "100%", height: "680px" }}>
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d62704.27495609538!2d106.69932917591841!3d10.809995444018838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1skfc!5e0!3m2!1sen!2s!4v1696423470463!5m2!1sen!2s" 
-              width="100%" 
-              height="100%" 
-              allowFullScreen={true} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade">
-            </iframe>
+              <GoogleMapReact
+                defaultCenter={center}
+                defaultZoom={zoom}
+                onChange={handleMapChange}
+              >
+                {locations.map((location: ILocation, index) => (
+                  <Location
+                    lat={location.lat}
+                    lng={location.lng}
+                    name={location.name}
+                    key={index}
+                  />
+                ))}
+              </GoogleMapReact>
             </div>
             <div className="business-info">
                 <div className="info-grid">

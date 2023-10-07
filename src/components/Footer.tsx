@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Import style sheet
-import "../styles/Footer.css";
+import "@styles/Footer.css";
 
 // Import social media icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

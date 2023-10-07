@@ -5,6 +5,7 @@ import React, { useEffect } from "react"; // Import React namespace and useEffec
 
 // Import components
 import Head from "../components/Head";
+import { navbarName } from "@constants/Constant";
 
 /**
  * @name Error404
@@ -17,7 +18,7 @@ export default function Error404({setActivePage}: {setActivePage: any}) {
     // Set the page's title and active page to 404 page
     useEffect(() => {
         document.title = "404 Error Page | Kashy";
-        setActivePage("404");
+        setActivePage(navbarName.notFound);
     }, [setActivePage]);
 
     return (

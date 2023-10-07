@@ -21,6 +21,7 @@ import Error404 from './pages/404';
 // Import all components
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { navbarName } from '@constants/Constant';
 
 /**
  * @name App
@@ -30,7 +31,7 @@ import Footer from './components/Footer';
 export default function App() {
 
   // Variables to indicate which page is currently active
-  const [activePage, setActivePage] = useState("Home");
+  const [activePage, setActivePage] = useState(navbarName.home);
 
   return (
     <BrowserRouter>

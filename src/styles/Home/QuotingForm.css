@@ -102,25 +102,31 @@
   cursor: pointer;
 }
 
-.scroll-button {
+.nav-opened {
+  opacity: 0!important;
+}
+
+.scroll-button-container {
   position: fixed;
-  left: 0;
-  bottom: 10px;
-  width: 100%;
-  height: 100px;
+  right: 130px;
+  top: 0;
+  width: auto;
+  height: 75px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transform: translateY(100px);
-  -webkit-transform: translateY(100px);
-  -moz-transform: translateY(100px);
-  -ms-transform: translateY(100px);
-  -o-transform: translateY(100px);
+  justify-content: right;
+  transform: translateY(-100px);
+  -webkit-transform: translateY(-100px);
+  -moz-transform: translateY(-100px);
+  -ms-transform: translateY(-100px);
+  -o-transform: translateY(-100px);
   transition: .3s all;
   -webkit-transition: .3s all;
   -moz-transition: .3s all;
   -ms-transition: .3s all;
   -o-transition: .3s all;
+  z-index: 101;
+  opacity: 1;
 }
 
 .showBtn {
@@ -201,6 +207,11 @@
     -ms-transform: translateX(0%)!important;
     -o-transform: translateX(0%)!important;
   }
+
+  .scroll-button-container {
+    height: 68px;
+    right: 80px;
+  }
 }
 
 /* For mobile */
@@ -239,5 +250,13 @@
 
   .activeForm {
     padding: 2rem;
+  }
+
+  .scroll-button-container--btn {
+    padding: .5rem 1rem!important;
+  }
+
+  .scroll-button-container {
+    right: 60px;
   }
 }

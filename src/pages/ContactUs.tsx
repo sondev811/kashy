@@ -2,12 +2,13 @@
 
 // Required imports
 import React, { useEffect } from "react"; // Import React namespace and useEffect function to change the page's title
-import "../styles/ContactUs.css"; // Import style sheet
+import "@styles/ContactUs.css"; // Import style sheet
 
 // Import components
-import Head from "../components/Head";
-import ContactInfo from "../components/ContactUs/ContactInfo";
-import ContactForm from "../components/ContactUs/ContactForm";
+import Head from "@components/Head";
+import ContactInfo from "@components/ContactUs/ContactInfo";
+import ContactForm from "@components/ContactUs/ContactForm";
+import { navbarName } from "@constants/Constant";
 
 /**
  * @name ContactUs
@@ -20,7 +21,7 @@ export default function ContactUs({setActivePage}: {setActivePage: any}) {
     // Set the page's title and active page to ContactUs
     useEffect(() => {
         document.title = "Contact Us | Kashy";
-        setActivePage("ContactUs");
+        setActivePage(navbarName.contactUs);
     }, [setActivePage]);
 
     return (

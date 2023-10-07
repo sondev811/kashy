@@ -10,7 +10,8 @@ interface Props {
   rounded?: 'rounded' | 'half';
   darkText?: boolean,
   href?: string,
-  icon?: JSX.Element
+  icon?: JSX.Element,
+  extendsClass?: string
 }
 
 const types = {
@@ -39,13 +40,14 @@ const Button: React.FC<Props> = (props) => {
     rounded,
     darkText,
     href,
-    icon
+    icon,
+    extendsClass
   } = props;
   return (
     type === types.button ? 
     <button 
       type='button'
-      className={`button ${size ? sizes[size] : sizes.normal} ${rounded ? borderRadius[rounded] : null} ${darkText ? 'button-text-dark' : null}`}
+      className={`button ${size ? sizes[size] : sizes.normal} ${rounded ? borderRadius[rounded] : null} ${darkText ? 'button-text-dark' : null} ${extendsClass}`}
       style={customStyle} 
       onClick={() => onClick()}>
         { icon ? <span className='button-icon'>{icon}</span> : null }

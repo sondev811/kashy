@@ -1,13 +1,15 @@
 /* This file contains the code for the navigation bar */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 // Required imports
 import { Link } from "react-router-dom"; // Import element to link to other pages
-
-import "../styles/Nav.css";
+import "@styles/Nav.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
-
+import { navbar } from "@constants/Constant";
+import { INavbar } from "@interfaces/index"
+import { faFacebook, faFacebookF, faInstagram, faLinkedin, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import useOutside from "@hooks/useOutside";
 /**
  * @name Navigation
  * @summary Renders the navigation bar when it is called
@@ -16,96 +18,102 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
  */
 export default function Navigation({ activePage }: { activePage: any }) {
   const [showNav, setShowNav] = useState(false);
+  const navbarRef = useRef(null);
+  const scrollBtn = document.getElementById('scrollBtn');
+  useOutside(navbarRef, () => {
+    setShowNav(false);
+    scrollBtn?.classList.remove('nav-opened');
+  });
+  
+
+
   return (
     <nav className="navbar">
-      <ul className={!showNav ? "navbar__list hide-item" : "navbar__list"}>
+      <ul ref={navbarRef} className={`navbar__list ${showNav ? 'showMobileMenu' : ''}`}>
         <div className="navbar-group-item">
-          <li className="navbar__item">
-            <Link
-              to="/"
-              className="navbar__link"
-              style={
-                activePage === "Home"
-                  ? { color: "#e89c89" }
-                  : { color: "#000000" }
-              }
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-            >
-              Home
-            </Link>
-          </li>
-          <li className="navbar__item">
-            <Link
-              to="/about-us"
-              className="navbar__link"
-              style={
-                activePage === "About Us"
-                  ? { color: "#e89c89" }
-                  : { color: "#000000" }
-              }
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-            >
-              About Us
-            </Link>
-          </li>
-          <li className="navbar__item">
-            <Link
-              to="/blog"
-              className="navbar__link"
-              style={
-                activePage === "Blog"
-                  ? { color: "#e89c89" }
-                  : { color: "#000000" }
-              }
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-            >
-              Blog
-            </Link>
-          </li>
-          <li className="navbar__item">
-            <Link
-              to="/contact-us"
-              className="navbar__link"
-              style={
-                activePage === "ContactUs"
-                  ? { color: "#e89c89" }
-                  : { color: "#000000" }
-              }
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-            >
-              Contact Us
-            </Link>
-          </li>
+          {
+            navbar.map((nav: INavbar, index) => {
+              return (
+                <li className="navbar__item">
+                  <Link
+                    to={nav.link}
+                    className={`navbar__link ${activePage === nav.name ? 'activeLink' : ''}`}
+                    onClick={() => setShowNav(!showNav)}
+                    role="button"
+                    onKeyDown={() => setShowNav(!showNav)}
+                    tabIndex={index}
+                  >
+                    { nav.name }
+                  </Link>
+                </li>
+              )
+            })
+          }
         </div>
-
         <div
           className="nav-close-icon"
-          onClick={() => setShowNav(!showNav)}
+          onClick={() => {
+            setShowNav(false);
+            scrollBtn?.classList.remove('nav-opened');
+          }}
           role="button"
-          onKeyDown={() => setShowNav(!showNav)}
+          onKeyDown={() => {
+            setShowNav(false);
+            scrollBtn?.classList.remove('nav-opened');
+          }}
         >
           <FontAwesomeIcon icon={faX} />
         </div>
+        <div className="navbar_social">
+          <a
+            href="https://www.facebook.com/KashyAustralia"
+            target="_blank"
+            // rel="noopener"
+            rel="noreferrer"
+            className="hero-socials__link facebook"
+          >
+            {/* <FontAwesomeIcon icon={faFacebook} className="hero-socials__icon" /> */}
+            <FontAwesomeIcon
+              icon={faFacebookF}
+              className="hero-socials__icon"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/kashyaustralia/"
+            target="_blank"
+            rel="noreferrer"
+            className="hero-socials__link instagram"
+          >
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="hero-socials__icon"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEU0lrrw3JSowAAAYooUD3w2QjXs5Zt4dPrt0-A9KZ3uS1OrDEN2VlYqCKm1FJc7yDS9YDfdpdTt8Y2XGFoNIW3iGHf0ql4FsRGEo-VleJkjs-zDQhH2tZVHfSIDeF7i-LvUMo=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fkashyaustralia%2F"
+            target="_blank"
+            rel="noreferrer"
+            className="hero-socials__link linkedin"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedinIn}
+              className="hero-socials__icon"
+            />
+          </a>
+        </div>
       </ul>
-
       <div className="nav-mobile-icon">
         <FontAwesomeIcon
           icon={faBars}
-          onClick={() => setShowNav(!showNav)}
+          onClick={() => {
+            setShowNav(true);
+            scrollBtn?.classList.add('nav-opened');
+          }}
           role="button"
-          onKeyDown={() => setShowNav(!showNav)}
+          onKeyDown={() => {
+            setShowNav(true);
+            scrollBtn?.classList.add('nav-opened');
+          }}
         />
       </div>
     </nav>

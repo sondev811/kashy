@@ -1,10 +1,13 @@
 /* This file contains the code for the Blog page of the application */
 
 // Required imports
-import React, { useEffect } from "react"; // Import React namespace and useEffect function to change the page's title
+import React, { useEffect, useState } from "react"; // Import React namespace and useEffect function to change the page's title
 
 // Import components
-import Head from "../components/Head";
+import Head from "@components/Head";
+import { navbarName } from "@constants/Constant";
+import Modal from "@components/Modal";
+import UpdatingGif from "@assets/img/updating.gif";
 
 /**
  * @name Blog
@@ -13,16 +16,22 @@ import Head from "../components/Head";
  * @returns HTML elements of the Blog page
  */
 export default function Blog({setActivePage}: {setActivePage: any}) {
-
+    const [isActiveModal, setIsActiveModal] = useState(true);
     // Set the page's title and active page to Blog
     useEffect(() => {
         document.title = "Blog | Kashy";
-        setActivePage("Blog");
+        setActivePage(navbarName.blog);
     }, [setActivePage]);
 
     return (
-        <main>
-            <Head />
-        </main>
+      <main>
+        <Head />
+        <Modal isActiveModal={isActiveModal} setIsActiveModal={setIsActiveModal}> 
+          <div style={{ display: 'flex', justifyContent: 'center'}}>
+            <img src={UpdatingGif} alt='updating' style={{width: '100%'}} />
+          </div>
+          <p style={{ fontSize: '30px', fontWeight: 'bold', paddingBottom: '1rem', color: '#333'}}>Content Updating...</p>
+        </Modal>
+      </main>
     )
 }

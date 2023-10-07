@@ -25,13 +25,13 @@ export default function Header({ activePage }: { activePage: any }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    console.log('active');
     const fullSizeLogoInnerElem = fullSizeLogoInner.current;
-    if(pathname === '/') {
-      const heroHeading = document.getElementById('heroHeading');
-      const heroIntroduction = document.getElementById('heroIntroduction');
-      const largeLogoElem = largeLogo.current;
-      const marginHeroHeading = 24; // margin của header hero so với thành phần trên(dựa theo file hero.css, class hero-introduction__heading)
-      
+    const heroHeading = document.getElementById('heroHeading');
+    const heroIntroduction = document.getElementById('heroIntroduction');
+    const largeLogoElem = largeLogo.current;
+    const marginHeroHeading = 24; // margin của header hero so với thành phần trên(dựa theo file hero.css, class hero-introduction__heading)
+    const setDefault = () => {
       if (
         heroHeading && 
         heroIntroduction && 
@@ -41,17 +41,20 @@ export default function Header({ activePage }: { activePage: any }) {
         fullSizeLogoInnerElem.classList.remove('hideLogo');
 
         const heroIntroductionWidth = heroIntroduction.clientWidth; // chiều rộng của hero introduction
-        const largeLogoWidth = largeLogoElem.naturalWidth; // chiều rộng của logo
+        const largeLogoWidth = largeLogoElem.naturalWidth > 0 ? largeLogoElem.naturalWidth : 359; // chiều rộng của logo
         const { offsetTop, clientHeight } = heroHeading; // vị trí của heading cách top và chiều cao của heading
-  
+
         const translateX = 
           (heroIntroductionWidth / 2) - (largeLogoWidth / 2); // vị trí giữa của logo so với hero introduction
         const translateY = 
           offsetTop - clientHeight - marginHeroHeading; //vị trí trên của heading
         
-          largeLogoElem.style.transform = `translate(${translateX}px,${translateY}px)`;
+        largeLogoElem.style.transform = `translate(${translateX}px,${translateY}px)`;
       }
-      
+    }
+
+    setDefault();
+    if(pathname === '/') { 
       const onScroll = () => {
         const scrollTop =
           window.pageYOffset || document.documentElement.scrollTop;
@@ -68,10 +71,12 @@ export default function Header({ activePage }: { activePage: any }) {
         }
       };
     
-      document.addEventListener('scroll', onScroll);
+      window.addEventListener('scroll', onScroll);
+      window.addEventListener('resize', setDefault);
     
       return () => {
-        document.removeEventListener('scroll', onScroll);
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', setDefault);
       };
     } else {
       fullSizeLogoInner.current?.classList.add('hideLogo');

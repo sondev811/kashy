@@ -18,6 +18,7 @@
     "@types/react-dom": "^18.2.8",
     "axios": "^1.5.1",
     "craco": "^0.0.3",
+    "google-map-react": "^2.2.1",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/google-map-react": "^2.1.8",
     "@types/react-slick": "^0.23.10",
     "craco-alias": "^3.0.1"
   },

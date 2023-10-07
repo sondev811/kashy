@@ -94,12 +94,24 @@
   .logo-inner {
     display: none;
   }
+  
+  .header__logo {
+    flex: 1;
+  }
+
+  .navbar {
+    padding-right: 1rem;
+  }
 }
 
 /* For mobile */
 @media screen and (max-width: 575.98px) {
   .logo {
     margin-right: auto;
+  }
+
+  .header__top {
+    display: none;
   }
 
   .nav-mobile-btn {
