@@ -17,7 +17,7 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
  * @returns HTML element of the Header
  */
 // The activePage variable are passed down from App.tsx, then it is continued to be passed down to Navigation.
-export default function Header({ activePage }: { activePage: any }) {
+export default function Header() {
   const fullSizeLogoInner = useRef<HTMLDivElement | null>(null);
   const largeLogo = useRef<HTMLImageElement | null>(null);
   const headerTop = useRef<HTMLImageElement | null>(null);
@@ -25,7 +25,6 @@ export default function Header({ activePage }: { activePage: any }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    console.log('active');
     const fullSizeLogoInnerElem = fullSizeLogoInner.current;
     const heroHeading = document.getElementById('heroHeading');
     const heroIntroduction = document.getElementById('heroIntroduction');
@@ -105,7 +104,7 @@ export default function Header({ activePage }: { activePage: any }) {
             <img src={KashyLogo} alt="Kashy" className="logo" id='smallLogo'/>
           </div>
           {/* <!-- Nav bar --> */}
-          <Navigation activePage={activePage} />
+          <Navigation/>
           <div className="kashy-partner">
             <a
               href="https://www.mtaq.com.au/"

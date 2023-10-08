@@ -16,21 +16,14 @@ import { navbarName } from "@constants/Constant";
  * @param setActivePage Used to signal the current active page to the App function
  * @returns HTML elements of the ContactUs page
  */
-export default function ContactUs({setActivePage}: {setActivePage: any}) {
-
-    // Set the page's title and active page to ContactUs
-    useEffect(() => {
-        document.title = "Contact Us | Kashy";
-        setActivePage(navbarName.contactUs);
-    }, [setActivePage]);
-
-    return (
-        <main>
-            <Head />
-            <div className="contact-us-container">
-                <ContactInfo />
-                <ContactForm />
-            </div>
-        </main>
-    )
+export default function ContactUs() {
+  return (
+      <main>
+          <Head />
+          <div className="contact-us-container">
+              <ContactInfo />
+              <ContactForm />
+          </div>
+      </main>
+  )
 }

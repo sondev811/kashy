@@ -30,21 +30,17 @@ import { navbarName } from '@constants/Constant';
  */
 export default function App() {
 
-  // Variables to indicate which page is currently active
-  const [activePage, setActivePage] = useState(navbarName.home);
-
   return (
     <BrowserRouter>
       <div className="App">
         <div className = "page-contents">
-          <Header activePage={activePage} />
-
+          <Header/>
           <Routes>
-            <Route path="/" element={<Home setActivePage = {setActivePage}/>} />
-            <Route path="/about-us" element={<AboutUs setActivePage={setActivePage} />} />
-            <Route path="/blog" element={<Blog setActivePage={setActivePage} />} />
-            <Route path="/contact-us" element={<ContactUs setActivePage={setActivePage} />} />
-            <Route path="*" element={<Error404 setActivePage={setActivePage}/>} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/about-us" element={<AboutUs/>} />
+            <Route path="/blog" element={<Blog/>} />
+            <Route path="/contact-us" element={<ContactUs/>} />
+            <Route path="*" element={<Error404/>} />
           </Routes>
 
         </div>

@@ -13,17 +13,12 @@ import { navbarName } from "@constants/Constant";
  * @param setActivePage Used to signal the current active page to the App function
  * @returns HTML elements of the Error 404 page
  */
-export default function Error404({setActivePage}: {setActivePage: any}) {
+export default function Error404() {
+  document.title = "404 Error Page | Kashy";
 
-    // Set the page's title and active page to 404 page
-    useEffect(() => {
-        document.title = "404 Error Page | Kashy";
-        setActivePage(navbarName.notFound);
-    }, [setActivePage]);
-
-    return (
-        <main>
-            <Head />
-        </main>
-    )
+  return (
+      <main>
+          <Head />
+      </main>
+  )
 }

@@ -15,14 +15,9 @@ import UpdatingGif from "@assets/img/updating.gif";
  * @param setActivePage Used to signal the current active page to the App function
  * @returns HTML elements of the Blog page
  */
-export default function Blog({setActivePage}: {setActivePage: any}) {
+export default function Blog() {
     const [isActiveModal, setIsActiveModal] = useState(true);
-    // Set the page's title and active page to Blog
-    useEffect(() => {
-        document.title = "Blog | Kashy";
-        setActivePage(navbarName.blog);
-    }, [setActivePage]);
-
+    
     return (
       <main>
         <Head />

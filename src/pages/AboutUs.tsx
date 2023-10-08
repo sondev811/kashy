@@ -15,19 +15,12 @@ import { navbarName } from "@constants/Constant";
  * @param setActivePage Used to signal the current active page to the App function
  * @returns HTML elements of the About Us page
  */
-export default function AboutUs({setActivePage}: {setActivePage: any}) {
+export default function AboutUs() {
     
-    // Set the page's title and active page to Home
-    useEffect(() => {
-        document.title = "About Us | Kashy";
-        setActivePage(navbarName.aboutUs);
-    }, [setActivePage]);
-
-    return (
-        <main>
-            <Head />
-            <AboutUsInfo />
-        </main>
-    )
-
+  return (
+      <main>
+          <Head />
+          <AboutUsInfo />
+      </main>
+  )
 }

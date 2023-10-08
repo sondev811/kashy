@@ -17,19 +17,23 @@ export const navbarName = {
 export const navbar:INavbar[] = [
   {
     link: '/',
-    name: navbarName.home
+    name: navbarName.home,
+    title: 'Kashy Australia | Find an Honest Mechanic'
   },
   {
     link: '/about-us',
-    name: navbarName.aboutUs
+    name: navbarName.aboutUs,
+    title: 'About Us | Kashy'
   },
   {
     link: '/blog',
-    name: navbarName.blog
+    name: navbarName.blog,
+    title: 'Blog | Kashy'
   },
   {
     link: '/contact-us',
-    name: navbarName.contactUs
+    name: navbarName.contactUs,
+    title: 'Contact Us | Kashy'
   }
 ]
 

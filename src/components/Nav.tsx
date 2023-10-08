@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 
 // Required imports
-import { Link } from "react-router-dom"; // Import element to link to other pages
+import { Link, useLocation } from "react-router-dom"; // Import element to link to other pages
 import "@styles/Nav.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,12 @@ import useOutside from "@hooks/useOutside";
  * @param activePage string value to check which page is currently active
  * @returns HTML element of the navigation bar
  */
-export default function Navigation({ activePage }: { activePage: any }) {
+export default function Navigation() {
+  const { pathname } = useLocation();
+  const nav = navbar.find(nav => nav.link === pathname);
+  const title = nav ? nav.title : 'Kashy';
+  document.title = title;
+  
   const [showNav, setShowNav] = useState(false);
   const navbarRef = useRef(null);
   const scrollBtn = document.getElementById('scrollBtn');
@@ -24,8 +29,6 @@ export default function Navigation({ activePage }: { activePage: any }) {
     setShowNav(false);
     scrollBtn?.classList.remove('nav-opened');
   });
-  
-
 
   return (
     <nav className="navbar">
@@ -37,7 +40,7 @@ export default function Navigation({ activePage }: { activePage: any }) {
                 <li className="navbar__item">
                   <Link
                     to={nav.link}
-                    className={`navbar__link ${activePage === nav.name ? 'activeLink' : ''}`}
+                    className={`navbar__link ${pathname === nav.link ? 'activeLink' : ''}`}
                     onClick={() => setShowNav(!showNav)}
                     role="button"
                     onKeyDown={() => setShowNav(!showNav)}
