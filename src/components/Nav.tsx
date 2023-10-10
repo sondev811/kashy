@@ -105,18 +105,20 @@ export default function Navigation() {
           </a>
         </div>
       </ul>
-      <div className="nav-mobile-icon">
+      <div className="nav-mobile-icon" 
+        onClick={() => {
+          setShowNav(true);
+          console.log('test');
+          scrollBtn?.classList.add('nav-opened');
+        }}
+        onKeyDown={() => {
+          setShowNav(true);
+          scrollBtn?.classList.add('nav-opened');
+        }}
+      >
         <FontAwesomeIcon
           icon={faBars}
-          onClick={() => {
-            setShowNav(true);
-            scrollBtn?.classList.add('nav-opened');
-          }}
           role="button"
-          onKeyDown={() => {
-            setShowNav(true);
-            scrollBtn?.classList.add('nav-opened');
-          }}
         />
       </div>
     </nav>
